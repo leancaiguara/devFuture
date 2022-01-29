@@ -4,7 +4,7 @@ import closeButton from './assets/images/close-svgrepo-com.svg'
 import {BsCheck2Circle} from 'react-icons/bs'
 import downArrow from './assets/images/arrow-down-svgrepo-com.svg'
 import hamburguerMenu from './assets/images/menu-svgrepo-com.svg'
-
+import codeImage from './assets/images/browser-coding-svgrepo-com (1).svg'
 
 function App() {
   return (
@@ -34,6 +34,8 @@ function App() {
           <p className="subhead">El mundo está cambiando, sé parte del cambio!</p>
        
           <div className="cta-div" >
+
+            <img className='code-img' src={codeImage} alt="code" />
             
         <button className='hero-section__cta-btn' >
           {/* <BsCheck2Circle/> */} Quiero ser voluntario</button>
@@ -63,7 +65,7 @@ function App() {
           </div>
           <div>
           <p>Políticas de privacidad</p>
-          <Link to="#">Donaciones</Link>
+          <Link className="footer__donations"  to="#">Donaciones</Link>
           </div>
         </footer>
         

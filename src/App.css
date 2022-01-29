@@ -94,6 +94,10 @@ Link{
 
 }
 
+.hero-section .code-img{
+  display: none;
+}
+
 .hero-section h1 {
   font-size:3rem;
   line-height:2rem;
@@ -148,6 +152,12 @@ display: none;
 .footer p {
 color: white;
 font-size: small;
+}
+
+.footer__donations{
+  text-decoration: none;
+  color: white;
+  font-size:1rem
 }
 
 @keyframes bounceArrow{
@@ -216,6 +226,28 @@ font-size: small;
     text-decoration: underline;
 
   }
+
+  .hero-section h1{
+    margin-left: 1.2em;
+    font-size:5rem
+  }
+
+  .hero-section .subhead{
+    font-size:1.5rem;
+    margin-left: 4em;
+  }
+
+  .hero-section__cta-btn{
+    margin-left:4.7em;
+  }
+
+  .hero-section__down-arrow{
+    margin-left:1.5em
+  }
+
+
+
+
 }
 
  /*  .app__hero-image{
