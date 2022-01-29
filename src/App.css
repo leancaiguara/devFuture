@@ -160,23 +160,78 @@ font-size: small;
   }
 }
 
+
 @media only screen and (min-width:680px) {
   body {
     margin: 0;
     font-family: "Poppins", sans-serif;
   }
+
+  .hero-section{
+    margin-left: 1em;
+    font-size: 4rem;
+    line-height: .8em;
+  }
+
+  .hero-section .hero-section__down-arrow {
+    width: 1em;
+    bottom: 1.5em;
+
+  }
 }
 
+@media only screen and (min-width: 920px){
 
-/* .hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  background-size: cover;
-  background-position-x: 20%;
-  background-position-y: 20%;
-   overflow: hidden;
-} */
+  .app__nav__hamburguer-menu{
+    display: none;
+  }
+
+  .app__header .app__nav{
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width:auto;
+    height:auto;
+    background-color: unset;
+  }
+
+  .app__header .app__nav .nav__close-btn{
+    display: none
+  }
+
+  .app__header .app__nav ul{
+    display:flex;
+    margin:0; /* taking out the margin that i set for the mobile version */
+    color: white;
+    padding: .5em 1.5em;
+    font-size: 0.9rem;
+  }
+
+  .app__header .app__nav ul .nav__link{
+    color: white
+  }
+
+  .app__header .app__nav ul .nav__link:hover{
+    background-color:unset;
+    text-decoration: underline;
+
+  }
+}
+
+ /*  .app__hero-image{
+    left: unset;
+    right: 0;
+    width: 40%;
+  } */
+
+/*   .hero-section h1{
+    color: rgba(0,35,51,1);
+  }
+
+  .hero-section .subhead{
+    color: rgba(0,35,51,1);
+  }
+
+  .hero-section img{
+    filter: invert(20%);
+  } */
