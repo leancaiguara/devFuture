@@ -9,4 +9,6 @@ router.get("/:id", volunteerCtrll.getVolunteer);
 
 router.put("/:id", volunteerCtrll.updateVolunteer);
 
+router.delete("/:id", volunteerCtrll.deleteVolunteer);
+
 module.exports = router;
