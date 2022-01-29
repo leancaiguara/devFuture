@@ -36,15 +36,9 @@ const VolunteerSchema = new Schema(
       type: String,
       trim: true,
     },
-    comments: {
+    comment: {
       type: String,
     },
-    students: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Student",
-      },
-    ],
   },
   {
     timestamps: true,

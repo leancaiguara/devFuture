@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const volleyball = require("volleyball");
 const client = require("./config/db");
+const routes = require("./routes/index");
 //init
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(volleyball);
 
 //routes
-
+app.use("/api", routes);
 //server
 const PORT = process.env.PORT;
 client

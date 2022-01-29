@@ -43,11 +43,6 @@ const StudentSchema = new Schema(
     comments: {
       type: String,
     },
-    course: {
-      type: Schema.Types.ObjectId,
-      required: true,
-      ref: "Course",
-    },
   },
   { timestamps: true }
 );
