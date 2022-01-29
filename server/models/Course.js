@@ -34,10 +34,13 @@ const CourseSchema = new Schema(
     },
     start: {
       type: Date,
-      default: Date.now(),
     },
   },
   { timestamps: false }
 );
+
+CourseSchema.post("init", function () {
+  if (this.students[0]) this.limit = true;
+});
 
 module.exports = model("Course", CourseSchema);

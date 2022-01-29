@@ -43,6 +43,9 @@ const StudentSchema = new Schema(
     comments: {
       type: String,
     },
+    status: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
