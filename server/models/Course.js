@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const CourseSchema = new Schema(
   {
-    teacher: {
+    volunteer: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "Volunteer",

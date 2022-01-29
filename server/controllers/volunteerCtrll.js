@@ -31,11 +31,11 @@ class VolunteerCtrll {
       return res.status(500).send(err);
     }
   }
-
+  //update volunteer
   static async updateVolunteer(req, res) {
     try {
       req.body.password ? (req.body.password = bcrypt.hashSync(req.body.password, 12)) : null;
-      const volunteer = await User.findByIdAndUpdate(
+      const volunteer = await Volunteer.findByIdAndUpdate(
         req.params.id,
         {
           $set: req.body,

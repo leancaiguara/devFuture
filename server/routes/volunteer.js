@@ -7,4 +7,6 @@ router.get("/", volunteerCtrll.getAll);
 
 router.get("/:id", volunteerCtrll.getVolunteer);
 
+router.put("/:id", volunteerCtrll.updateVolunteer);
+
 module.exports = router;
