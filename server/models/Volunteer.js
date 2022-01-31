@@ -39,6 +39,9 @@ const VolunteerSchema = new Schema(
     comment: {
       type: String,
     },
+    status: {
+      type: String,
+    },
   },
   {
     timestamps: true,

@@ -20,6 +20,7 @@ class VolunteerCtrll {
 
 
   }
+
   static async getAll(req, res) {
     try {
       const volunteers = await Volunteer.find();
@@ -41,11 +42,11 @@ class VolunteerCtrll {
       return res.status(500).send(err);
     }
   }
-
+  //update volunteer
   static async updateVolunteer(req, res) {
     try {
       req.body.password ? (req.body.password = bcrypt.hashSync(req.body.password, 12)) : null;
-      const volunteer = await User.findByIdAndUpdate(
+      const volunteer = await Volunteer.findByIdAndUpdate(
         req.params.id,
         {
           $set: req.body,
@@ -54,7 +55,18 @@ class VolunteerCtrll {
       );
       return volunteer ? res.status(200).send(volunteer) : res.status(400).json("Bad update");
     } catch (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
+    }
+  }
+
+  static async deleteVolunteer(req, res) {
+    try {
+      const volunteer = await Volunteer.findById(req.params.id);
+      if (!volunteer) return res.status(400).json("Bad deleted");
+      await Volunteer.findByIdAndDelete(req.params.id);
+      res.status(200).send("deleted");
+    } catch (err) {
+      return res.status(500).send(err);
     }
   }
 }

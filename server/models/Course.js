@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const CourseSchema = new Schema(
   {
-    teacher: {
+    volunteer: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "Volunteer",
@@ -34,10 +34,13 @@ const CourseSchema = new Schema(
     },
     start: {
       type: Date,
-      default: Date.now(),
     },
   },
   { timestamps: false }
 );
+
+CourseSchema.post("init", function () {
+  if (this.students[0]) this.limit = true;
+});
 
 module.exports = model("Course", CourseSchema);
