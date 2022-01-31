@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt=require("bcrypt")
 
 const StudentSchema = new Schema(
   {
@@ -25,6 +26,11 @@ const StudentSchema = new Schema(
       required: true,
       trim: true,
     },
+
+    salt: {
+      type: String,
+      default: "",
+    },
     school: {
       type: String,
       required: true,
@@ -46,5 +52,33 @@ const StudentSchema = new Schema(
   },
   { timestamps: true }
 );
+
+
+
+StudentSchema.static("hash", function (password, salt) {
+  return bcrypt.hash(password, salt);
+});
+
+
+StudentSchema.statics.comparePassword = async function (password, newPassword) {
+  return bcrypt.compare(password, newPassword);
+};
+
+
+StudentSchema.pre("save", async function (next) {
+
+  const salt = await bcrypt.genSalt();
+  this.salt = salt
+
+  // Guardar el salt
+
+  // Generar la contraseña hasheada
+  const hashedPassword = await bcrypt.hash(this.password, salt);
+
+  // Guardar contraseña hasheada
+  this.password = hashedPassword;
+});
+
+
 
 module.exports = model("Student", StudentSchema);

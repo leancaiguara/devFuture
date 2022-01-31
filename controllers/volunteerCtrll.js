@@ -9,6 +9,16 @@ class VolunteerCtrll {
     } catch (err) {
       return res.status(500).send(err);
     }
+
+  
+
+
+  }
+
+  static async login (req,res)  {
+  
+
+
   }
   static async getAll(req, res) {
     try {
